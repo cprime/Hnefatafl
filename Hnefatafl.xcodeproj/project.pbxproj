@@ -1,0 +1,674 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1683DD86B1D8463979EF6920 /* Pods_Hnefatafl_HnefataflTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56242E2F445378D0B9D2E3FE /* Pods_Hnefatafl_HnefataflTests.framework */; };
+		1B9B6F82B370ADF8DBE3CBCF /* Pods_Hnefatafl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9222C75E02B0C54B2406A100 /* Pods_Hnefatafl.framework */; };
+		A936E5131FCB45FB0000622F /* BoardSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = A936E5121FCB45FB0000622F /* BoardSquare.swift */; };
+		E618C3791FDE1FB500D519F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E618C3771FDE1FB500D519F3 /* Main.storyboard */; };
+		E63C52B71C33307300F66567 /* BoardPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C52B61C33307300F66567 /* BoardPiece.swift */; };
+		E63C52BB1C33318D00F66567 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C52BA1C33318D00F66567 /* Board.swift */; };
+		E63C52BD1C3331B500F66567 /* BoardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C52BC1C3331B500F66567 /* BoardFactory.swift */; };
+		E63C52C41C345ACD00F66567 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C52C31C345ACD00F66567 /* Game.swift */; };
+		E63C52C81C345B5B00F66567 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C52C71C345B5B00F66567 /* Turn.swift */; };
+		E64136D81FD2405B00C9E33E /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64136D71FD2405B00C9E33E /* Array+Helpers.swift */; };
+		E673DD2D1FD797020071C0C9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E673DD2C1FD797020071C0C9 /* GameScene.swift */; };
+		E68791761C38680600C60D00 /* BoardPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68791751C38680600C60D00 /* BoardPosition.swift */; };
+		E68AF7081FD4858400F1A763 /* BoardNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68AF7071FD4858400F1A763 /* BoardNode.swift */; };
+		E68AF70B1FD4E8BE00F1A763 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68AF7091FD4E8BE00F1A763 /* GameViewController.swift */; };
+		E68AF70E1FD4F41900F1A763 /* BoardSquareNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68AF70D1FD4F41900F1A763 /* BoardSquareNode.swift */; };
+		E68AF7101FD78A8500F1A763 /* BoardPieceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68AF70F1FD78A8500F1A763 /* BoardPieceNode.swift */; };
+		E6C15EC11FDCD9FC00B2ACEC /* BoardSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C15EC01FDCD9FC00B2ACEC /* BoardSelection.swift */; };
+		E6C8CF8A1C2F67CC009D4269 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C8CF891C2F67CC009D4269 /* AppDelegate.swift */; };
+		E6C8CF951C2F67CC009D4269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6C8CF941C2F67CC009D4269 /* Assets.xcassets */; };
+		E6C8CF981C2F67CC009D4269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6C8CF961C2F67CC009D4269 /* LaunchScreen.storyboard */; };
+		E6C8CFA31C2F67CD009D4269 /* HnefataflTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C8CFA21C2F67CD009D4269 /* HnefataflTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E6C8CF9F1C2F67CD009D4269 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6C8CF7E1C2F67CC009D4269 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6C8CF851C2F67CC009D4269;
+			remoteInfo = Hnefatafl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		56242E2F445378D0B9D2E3FE /* Pods_Hnefatafl_HnefataflTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hnefatafl_HnefataflTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CDE3167635B862CF45F6C38 /* Pods-Hnefatafl-HnefataflTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hnefatafl-HnefataflTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hnefatafl-HnefataflTests/Pods-Hnefatafl-HnefataflTests.debug.xcconfig"; sourceTree = "<group>"; };
+		71B0FF79FE00135E42548E5A /* Pods-Hnefatafl-HnefataflTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hnefatafl-HnefataflTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hnefatafl-HnefataflTests/Pods-Hnefatafl-HnefataflTests.release.xcconfig"; sourceTree = "<group>"; };
+		9222C75E02B0C54B2406A100 /* Pods_Hnefatafl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hnefatafl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A936E5121FCB45FB0000622F /* BoardSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSquare.swift; sourceTree = "<group>"; };
+		AFA95E604DF6DFC82EF6D179 /* Pods-Hnefatafl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hnefatafl.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hnefatafl/Pods-Hnefatafl.release.xcconfig"; sourceTree = "<group>"; };
+		CD50A0B9A532C5A42AE97EE9 /* Pods-Hnefatafl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hnefatafl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hnefatafl/Pods-Hnefatafl.debug.xcconfig"; sourceTree = "<group>"; };
+		E618C3781FDE1FB500D519F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E63C52B61C33307300F66567 /* BoardPiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BoardPiece.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		E63C52BA1C33318D00F66567 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Board.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		E63C52BC1C3331B500F66567 /* BoardFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardFactory.swift; sourceTree = "<group>"; };
+		E63C52C31C345ACD00F66567 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Game.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		E63C52C71C345B5B00F66567 /* Turn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
+		E64136D71FD2405B00C9E33E /* Array+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Helpers.swift"; sourceTree = "<group>"; };
+		E673DD2C1FD797020071C0C9 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		E68791751C38680600C60D00 /* BoardPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardPosition.swift; sourceTree = "<group>"; };
+		E68AF7071FD4858400F1A763 /* BoardNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardNode.swift; sourceTree = "<group>"; };
+		E68AF7091FD4E8BE00F1A763 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		E68AF70D1FD4F41900F1A763 /* BoardSquareNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSquareNode.swift; sourceTree = "<group>"; };
+		E68AF70F1FD78A8500F1A763 /* BoardPieceNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPieceNode.swift; sourceTree = "<group>"; };
+		E6C15EC01FDCD9FC00B2ACEC /* BoardSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardSelection.swift; sourceTree = "<group>"; };
+		E6C8CF861C2F67CC009D4269 /* Hnefatafl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hnefatafl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6C8CF891C2F67CC009D4269 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		E6C8CF941C2F67CC009D4269 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E6C8CF971C2F67CC009D4269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E6C8CF991C2F67CC009D4269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6C8CF9E1C2F67CD009D4269 /* HnefataflTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HnefataflTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6C8CFA21C2F67CD009D4269 /* HnefataflTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HnefataflTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		E6C8CFA41C2F67CD009D4269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E6C8CF831C2F67CC009D4269 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B9B6F82B370ADF8DBE3CBCF /* Pods_Hnefatafl.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6C8CF9B1C2F67CD009D4269 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1683DD86B1D8463979EF6920 /* Pods_Hnefatafl_HnefataflTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09DC47F96C38020805052A60 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD50A0B9A532C5A42AE97EE9 /* Pods-Hnefatafl.debug.xcconfig */,
+				AFA95E604DF6DFC82EF6D179 /* Pods-Hnefatafl.release.xcconfig */,
+				5CDE3167635B862CF45F6C38 /* Pods-Hnefatafl-HnefataflTests.debug.xcconfig */,
+				71B0FF79FE00135E42548E5A /* Pods-Hnefatafl-HnefataflTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D8B1D255EC35242E0339D425 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9222C75E02B0C54B2406A100 /* Pods_Hnefatafl.framework */,
+				56242E2F445378D0B9D2E3FE /* Pods_Hnefatafl_HnefataflTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E63C52AF1C33281A00F66567 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E63C52B61C33307300F66567 /* BoardPiece.swift */,
+				E68791751C38680600C60D00 /* BoardPosition.swift */,
+				A936E5121FCB45FB0000622F /* BoardSquare.swift */,
+				E63C52BA1C33318D00F66567 /* Board.swift */,
+				E63C52BC1C3331B500F66567 /* BoardFactory.swift */,
+				E63C52C31C345ACD00F66567 /* Game.swift */,
+				E63C52C71C345B5B00F66567 /* Turn.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E64136D61FD2403500C9E33E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E64136D71FD2405B00C9E33E /* Array+Helpers.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E68AF7061FD484DA00F1A763 /* SceneKit */ = {
+			isa = PBXGroup;
+			children = (
+				E68AF7071FD4858400F1A763 /* BoardNode.swift */,
+				E68AF70F1FD78A8500F1A763 /* BoardPieceNode.swift */,
+				E68AF70D1FD4F41900F1A763 /* BoardSquareNode.swift */,
+				E673DD2C1FD797020071C0C9 /* GameScene.swift */,
+			);
+			path = SceneKit;
+			sourceTree = "<group>";
+		};
+		E6C15EBF1FDCD9FC00B2ACEC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E6C15EC01FDCD9FC00B2ACEC /* BoardSelection.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E6C8CF7D1C2F67CC009D4269 = {
+			isa = PBXGroup;
+			children = (
+				E6C8CF881C2F67CC009D4269 /* Hnefatafl */,
+				E6C8CFA11C2F67CD009D4269 /* HnefataflTests */,
+				E6C8CF871C2F67CC009D4269 /* Products */,
+				09DC47F96C38020805052A60 /* Pods */,
+				D8B1D255EC35242E0339D425 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E6C8CF871C2F67CC009D4269 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6C8CF861C2F67CC009D4269 /* Hnefatafl.app */,
+				E6C8CF9E1C2F67CD009D4269 /* HnefataflTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E6C8CF881C2F67CC009D4269 /* Hnefatafl */ = {
+			isa = PBXGroup;
+			children = (
+				E6C8CF891C2F67CC009D4269 /* AppDelegate.swift */,
+				E68AF7091FD4E8BE00F1A763 /* GameViewController.swift */,
+				E68AF7061FD484DA00F1A763 /* SceneKit */,
+				E64136D61FD2403500C9E33E /* Extensions */,
+				E63C52AF1C33281A00F66567 /* Models */,
+				E6C15EBF1FDCD9FC00B2ACEC /* ViewModels */,
+				E6C8CF941C2F67CC009D4269 /* Assets.xcassets */,
+				E6C8CF961C2F67CC009D4269 /* LaunchScreen.storyboard */,
+				E618C3771FDE1FB500D519F3 /* Main.storyboard */,
+				E6C8CF991C2F67CC009D4269 /* Info.plist */,
+			);
+			path = Hnefatafl;
+			sourceTree = "<group>";
+		};
+		E6C8CFA11C2F67CD009D4269 /* HnefataflTests */ = {
+			isa = PBXGroup;
+			children = (
+				E6C8CFA21C2F67CD009D4269 /* HnefataflTests.swift */,
+				E6C8CFA41C2F67CD009D4269 /* Info.plist */,
+			);
+			path = HnefataflTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E6C8CF851C2F67CC009D4269 /* Hnefatafl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6C8CFB21C2F67CD009D4269 /* Build configuration list for PBXNativeTarget "Hnefatafl" */;
+			buildPhases = (
+				4A777D967CEC256DAF7CB488 /* [CP] Check Pods Manifest.lock */,
+				E6C8CF821C2F67CC009D4269 /* Sources */,
+				E6C8CF831C2F67CC009D4269 /* Frameworks */,
+				E6C8CF841C2F67CC009D4269 /* Resources */,
+				AB95DAE80C8B9B4482D3729C /* [CP] Embed Pods Frameworks */,
+				86ED740C64AFA60E05447E48 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hnefatafl;
+			productName = Hnefatafl;
+			productReference = E6C8CF861C2F67CC009D4269 /* Hnefatafl.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E6C8CF9D1C2F67CD009D4269 /* HnefataflTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6C8CFB51C2F67CD009D4269 /* Build configuration list for PBXNativeTarget "HnefataflTests" */;
+			buildPhases = (
+				8243D7F593510A914B926F5C /* [CP] Check Pods Manifest.lock */,
+				E6C8CF9A1C2F67CD009D4269 /* Sources */,
+				E6C8CF9B1C2F67CD009D4269 /* Frameworks */,
+				E6C8CF9C1C2F67CD009D4269 /* Resources */,
+				4A395501A37E848A958147F2 /* [CP] Embed Pods Frameworks */,
+				FD4685A2DAAAB6DC6BF560EA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6C8CFA01C2F67CD009D4269 /* PBXTargetDependency */,
+			);
+			name = HnefataflTests;
+			productName = HnefataflTests;
+			productReference = E6C8CF9E1C2F67CD009D4269 /* HnefataflTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E6C8CF7E1C2F67CC009D4269 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = ColdenPrime;
+				TargetAttributes = {
+					E6C8CF851C2F67CC009D4269 = {
+						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0820;
+					};
+					E6C8CF9D1C2F67CD009D4269 = {
+						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0820;
+						TestTargetID = E6C8CF851C2F67CC009D4269;
+					};
+				};
+			};
+			buildConfigurationList = E6C8CF811C2F67CC009D4269 /* Build configuration list for PBXProject "Hnefatafl" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E6C8CF7D1C2F67CC009D4269;
+			productRefGroup = E6C8CF871C2F67CC009D4269 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E6C8CF851C2F67CC009D4269 /* Hnefatafl */,
+				E6C8CF9D1C2F67CD009D4269 /* HnefataflTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E6C8CF841C2F67CC009D4269 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E618C3791FDE1FB500D519F3 /* Main.storyboard in Resources */,
+				E6C8CF981C2F67CC009D4269 /* LaunchScreen.storyboard in Resources */,
+				E6C8CF951C2F67CC009D4269 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6C8CF9C1C2F67CD009D4269 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A395501A37E848A958147F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Hnefatafl-HnefataflTests/Pods-Hnefatafl-HnefataflTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hnefatafl-HnefataflTests/Pods-Hnefatafl-HnefataflTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A777D967CEC256DAF7CB488 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hnefatafl-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8243D7F593510A914B926F5C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hnefatafl-HnefataflTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86ED740C64AFA60E05447E48 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hnefatafl/Pods-Hnefatafl-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB95DAE80C8B9B4482D3729C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Hnefatafl/Pods-Hnefatafl-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hnefatafl/Pods-Hnefatafl-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD4685A2DAAAB6DC6BF560EA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hnefatafl-HnefataflTests/Pods-Hnefatafl-HnefataflTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E6C8CF821C2F67CC009D4269 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E68AF70B1FD4E8BE00F1A763 /* GameViewController.swift in Sources */,
+				E68AF70E1FD4F41900F1A763 /* BoardSquareNode.swift in Sources */,
+				E68AF7101FD78A8500F1A763 /* BoardPieceNode.swift in Sources */,
+				E63C52C81C345B5B00F66567 /* Turn.swift in Sources */,
+				E63C52BD1C3331B500F66567 /* BoardFactory.swift in Sources */,
+				E68791761C38680600C60D00 /* BoardPosition.swift in Sources */,
+				E63C52B71C33307300F66567 /* BoardPiece.swift in Sources */,
+				E6C8CF8A1C2F67CC009D4269 /* AppDelegate.swift in Sources */,
+				E68AF7081FD4858400F1A763 /* BoardNode.swift in Sources */,
+				E673DD2D1FD797020071C0C9 /* GameScene.swift in Sources */,
+				E64136D81FD2405B00C9E33E /* Array+Helpers.swift in Sources */,
+				E63C52C41C345ACD00F66567 /* Game.swift in Sources */,
+				E6C15EC11FDCD9FC00B2ACEC /* BoardSelection.swift in Sources */,
+				E63C52BB1C33318D00F66567 /* Board.swift in Sources */,
+				A936E5131FCB45FB0000622F /* BoardSquare.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6C8CF9A1C2F67CD009D4269 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6C8CFA31C2F67CD009D4269 /* HnefataflTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E6C8CFA01C2F67CD009D4269 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6C8CF851C2F67CC009D4269 /* Hnefatafl */;
+			targetProxy = E6C8CF9F1C2F67CD009D4269 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E618C3771FDE1FB500D519F3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E618C3781FDE1FB500D519F3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E6C8CF961C2F67CC009D4269 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6C8CF971C2F67CC009D4269 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E6C8CFB01C2F67CD009D4269 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E6C8CFB11C2F67CD009D4269 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E6C8CFB31C2F67CD009D4269 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD50A0B9A532C5A42AE97EE9 /* Pods-Hnefatafl.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Hnefatafl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.coldenpri.Hnefatafl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		E6C8CFB41C2F67CD009D4269 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFA95E604DF6DFC82EF6D179 /* Pods-Hnefatafl.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Hnefatafl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.coldenpri.Hnefatafl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		E6C8CFB61C2F67CD009D4269 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CDE3167635B862CF45F6C38 /* Pods-Hnefatafl-HnefataflTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = HnefataflTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.intrepid.HnefataflTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hnefatafl.app/Hnefatafl";
+			};
+			name = Debug;
+		};
+		E6C8CFB71C2F67CD009D4269 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71B0FF79FE00135E42548E5A /* Pods-Hnefatafl-HnefataflTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HnefataflTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.intrepid.HnefataflTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hnefatafl.app/Hnefatafl";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E6C8CF811C2F67CC009D4269 /* Build configuration list for PBXProject "Hnefatafl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6C8CFB01C2F67CD009D4269 /* Debug */,
+				E6C8CFB11C2F67CD009D4269 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6C8CFB21C2F67CD009D4269 /* Build configuration list for PBXNativeTarget "Hnefatafl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6C8CFB31C2F67CD009D4269 /* Debug */,
+				E6C8CFB41C2F67CD009D4269 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6C8CFB51C2F67CD009D4269 /* Build configuration list for PBXNativeTarget "HnefataflTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6C8CFB61C2F67CD009D4269 /* Debug */,
+				E6C8CFB71C2F67CD009D4269 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E6C8CF7E1C2F67CC009D4269 /* Project object */;
+}
