@@ -12,14 +12,17 @@ import SpriteKit
 class GameViewController: UIViewController {
     @IBOutlet weak var skView: SKView!
     
+    var game: Game!
     var scene: GameScene!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let boardFactory = BoardFactory()
-        let board = boardFactory.createBoard()
-        let game = Game(board: board)
+        if game == nil {
+            let boardFactory = BoardFactory()
+            let board = boardFactory.createBoard()
+            game = Game(board: board)
+        }
         scene = GameScene(size:view.bounds.size, game: game)
     }
     
