@@ -15,6 +15,26 @@ class GameScene: SKScene {
     let statusNode: SKLabelNode
     let boardSelection: BoardSelection
     
+    let backButtonNode: SimpleButtonNode = {
+        return SimpleButtonNode(initialCellSize: 50, pathFactory: { (cellSize) -> CGPath in
+            let path = UIBezierPath()
+            path.move(to: CGPoint(x: cellSize, y: 0))
+            path.addLine(to: CGPoint(x: 0, y: cellSize * 0.5))
+            path.addLine(to: CGPoint(x: cellSize, y: cellSize))
+            return path.cgPath
+        })
+    }()
+    
+    let forwardButtonNode: SimpleButtonNode = {
+        return SimpleButtonNode(initialCellSize: 50, pathFactory: { (cellSize) -> CGPath in
+            let path = UIBezierPath()
+            path.move(to: CGPoint(x: 0, y: 0))
+            path.addLine(to: CGPoint(x: cellSize, y: cellSize * 0.5))
+            path.addLine(to: CGPoint(x: 0, y: cellSize))
+            return path.cgPath
+        })
+    }()
+    
     init(size: CGSize, game: Game) {
         self.game = game
         self.boardNode = BoardNode(board: game.board)
@@ -29,8 +49,19 @@ class GameScene: SKScene {
         statusNode.horizontalAlignmentMode = .left
         addChild(statusNode)
         
-        updateState()
+        backButtonNode.action = {
+            self.undoTurn()
+        }
+        addChild(backButtonNode)
+        
+        forwardButtonNode.action = {
+            self.redoTurn()
+        }
+        addChild(forwardButtonNode)
+        
         updateFrames()
+        updateStatusLabel()
+        updateButtons()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,10 +72,14 @@ class GameScene: SKScene {
         super.didChangeSize(oldSize)
         updateFrames()
     }
+
     
-    fileprivate func updateState(with turn: Turn? = nil) {
-        boardNode.update(boardSelection: boardSelection, turn: turn)
-        
+    private func updateButtons() {
+        backButtonNode.isEnabled = game.canUndoTurn()
+        forwardButtonNode.isEnabled = game.canRedoTurn()
+    }
+    
+    private func updateStatusLabel() {
         switch boardSelection.state {
         case .idle:
             if (game.isComplete) {
@@ -61,7 +96,35 @@ class GameScene: SKScene {
     
     private func updateFrames() {
         boardNode.cellSize = size.width / CGFloat(game.board.columns)
-        statusNode.position = CGPoint(x: 0, y: boardNode.cellSize * CGFloat(game.board.columns) + 5)
+        boardNode.position = CGPoint(x: 0, y: size.height - size.width)
+        
+        statusNode.position = CGPoint(x: 8, y: boardNode.position.y - statusNode.frame.size.height - 8)
+        
+        forwardButtonNode.cellSize = statusNode.frame.size.height
+        forwardButtonNode.position = CGPoint(x: size.width - forwardButtonNode.cellSize - 8, y: statusNode.position.y)
+        
+        backButtonNode.cellSize = forwardButtonNode.cellSize
+        backButtonNode.position = CGPoint(x: forwardButtonNode.position.x - backButtonNode.cellSize - 8, y: statusNode.position.y)
+    }
+    
+    fileprivate func undoTurn() {
+        guard case .idle = boardSelection.state, game.canUndoTurn(), let turn = (try? game.undoTurn()) else {
+            return
+        }
+        boardSelection.setIdle()
+        boardNode.applyBackwards(turn)
+        updateStatusLabel()
+        updateButtons()
+    }
+    
+    fileprivate func redoTurn() {
+        guard case .idle = boardSelection.state, game.canRedoTurn(), let turn = (try? game.redoTurn()) else {
+            return
+        }
+        boardSelection.setIdle()
+        boardNode.applyForward(turn)
+        updateStatusLabel()
+        updateButtons()
     }
 }
 
@@ -86,6 +149,8 @@ extension GameScene: BoardNodeDelegate {
             } else {
                 if game.canMove(from: selected, to: position) {
                     boardSelection.setTargetSelected(selected: selected, target: position)
+                } else {
+                    boardSelection.setIdle()
                 }
             }
             break
@@ -93,14 +158,22 @@ extension GameScene: BoardNodeDelegate {
             if position == selected {
                 boardSelection.setIdle()
             } else if position == target {
-                turn = game.move(from: selected, to: target)
+                if game.canMove(from: selected, to: position) {
+                    turn = game.move(from: selected, to: target)
+                }
                 boardSelection.setIdle()
             } else {
                 boardSelection.setIdle()
             }
             break
         }
-        updateState(with: turn)
+        
+        boardNode.apply(boardSelection)
+        if let turn = turn {
+            boardNode.applyForward(turn)
+        }
+        updateStatusLabel()
+        updateButtons()
     }
 }
 

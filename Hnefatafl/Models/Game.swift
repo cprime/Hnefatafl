@@ -8,10 +8,14 @@
 
 import Foundation
 
-class Game {
+enum GameError: Error {
+    case unknown
+}
 
+class Game {
     var board: Board
-    var moves = [Turn]()
+    var turns = [Turn]()
+    var undoneTurns = [Turn]()
     var activeSide: BoardPieceSide = .defender
 
     var victor: BoardPieceSide?
@@ -93,13 +97,14 @@ class Game {
                         to: toPosition,
                         capturedPieces: capturedPieces.flatMap({ $0 }),
                         completesGame: isComplete)
-        moves.append(turn)
-        activeSide = activeSide == .attacker ? .defender : .attacker
+        turns.append(turn)
+        undoneTurns.removeAll()
+        activeSide = (activeSide == .attacker ? .defender : .attacker)
         
         return turn
     }
 
-    func checkMovement(toPosition: BoardPosition, horizonal: Int, vertical: Int) -> (BoardPosition, BoardPiece)? {
+    private func checkMovement(toPosition: BoardPosition, horizonal: Int, vertical: Int) -> (BoardPosition, BoardPiece)? {
         let pinnedPosition = toPosition.move(column: horizonal, row: vertical)
         
         guard let movingPiece = board.piece(at: toPosition),
@@ -145,5 +150,51 @@ class Game {
         } else {
             return nil
         }
+    }
+    
+    func canRedoTurn() -> Bool {
+        return undoneTurns.count > 0
+    }
+    
+    func redoTurn() throws -> Turn {
+        guard let nextMove = undoneTurns.last else {
+            throw GameError.unknown
+        }
+        undoneTurns.removeLast()
+        turns.append(nextMove)
+        
+        try board.movePiece(from: nextMove.from, to: nextMove.to)
+        try nextMove.capturedPieces.forEach { position, _ in
+            _ = try board.removePiece(at: position)
+        }
+        if nextMove.completesGame {
+            victor = nextMove.piece.side
+        }
+        activeSide = (activeSide == .attacker ? .defender : .attacker)
+        
+        return nextMove
+    }
+    
+    func canUndoTurn() -> Bool {
+        return turns.count > 0
+    }
+    
+    func undoTurn() throws -> Turn {
+        guard let lastMove = turns.last else {
+            throw GameError.unknown
+        }
+        turns.removeLast()
+        undoneTurns.append(lastMove)
+        
+        try board.movePiece(from: lastMove.to, to: lastMove.from)
+        try lastMove.capturedPieces.forEach { position, piece in
+            try board.add(piece, at: position)
+        }
+        if lastMove.completesGame {
+            victor = nil
+        }
+        activeSide = (activeSide == .attacker ? .defender : .attacker)
+        
+        return lastMove
     }
 }

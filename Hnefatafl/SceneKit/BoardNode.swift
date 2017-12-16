@@ -85,15 +85,19 @@ class BoardNode: SKNode {
         }
     }
     
-    func update(boardSelection: BoardSelection, turn: Turn?) {
+    func apply(_ boardSelection: BoardSelection) {
         for (x, column) in boardSelection.spaces.enumerated() {
             for (y, type) in column.enumerated() {
                 let squareNode = squareNodes[x][y]
                 squareNode.boardSelectionType = type
             }
         }
-        if let turn = turn, let pieceNode = pieceNodes[turn.from.column][turn.from.row] {
+    }
+    
+    func applyForward(_ turn: Turn) {
+        if let pieceNode = pieceNodes[turn.from.column][turn.from.row] {
             pieceNodes[turn.to.column][turn.to.row] = pieceNode
+            pieceNodes[turn.from.column][turn.from.row] = nil
             
             let to = CGPoint(x: CGFloat(turn.to.column) * cellSize, y: CGFloat(turn.to.row) * cellSize)
             let moveAction = SKAction.move(to: to, duration: AnimationDuration.move)
@@ -109,6 +113,30 @@ class BoardNode: SKNode {
                     }
                 }
             })
+        }
+    }
+    
+    func applyBackwards(_ turn: Turn) {
+        if let pieceNode = pieceNodes[turn.to.column][turn.to.row] {
+            pieceNodes[turn.from.column][turn.from.row] = pieceNode
+            pieceNodes[turn.to.column][turn.to.row] = nil
+            
+            let to = CGPoint(x: CGFloat(turn.from.column) * cellSize, y: CGFloat(turn.from.row) * cellSize)
+            let waitAction = SKAction.wait(forDuration: AnimationDuration.fade)
+            let moveAction = SKAction.move(to: to, duration: AnimationDuration.move)
+            pieceNode.run(SKAction.sequence([waitAction, moveAction]))
+            
+            for (position, piece) in turn.capturedPieces {
+                let capturedPieceNode = BoardPieceNode(cellSize: cellSize, boardPiece: piece)
+                capturedPieceNode.position = CGPoint(x: CGFloat(position.column) * cellSize, y: CGFloat(position.row) * cellSize)
+                capturedPieceNode.zPosition = Layer.piece
+                capturedPieceNode.alpha = 0.0
+                addChild(capturedPieceNode)
+                pieceNodes[position.column][position.row] = capturedPieceNode
+                
+                let fadeAction = SKAction.fadeIn(withDuration: AnimationDuration.fade)
+                capturedPieceNode.run(fadeAction)
+            }
         }
     }
     
