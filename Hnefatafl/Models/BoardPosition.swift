@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BoardPosition: Equatable {
+struct BoardPosition: Equatable, Codable {
     let column: Int
     let row: Int
     

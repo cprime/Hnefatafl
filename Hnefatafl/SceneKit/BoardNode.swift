@@ -102,9 +102,9 @@ class BoardNode: SKNode {
             let to = CGPoint(x: CGFloat(turn.to.column) * cellSize, y: CGFloat(turn.to.row) * cellSize)
             let moveAction = SKAction.move(to: to, duration: AnimationDuration.move)
             pieceNode.run(moveAction, completion: {
-                for (position, _) in turn.capturedPieces {
-                    if let caputuredPieceNode = self.pieceNodes[position.column][position.row] {
-                        self.pieceNodes[position.column][position.row] = nil
+                for event in turn.capturedPieces {
+                    if let caputuredPieceNode = self.pieceNodes[event.position.column][event.position.row] {
+                        self.pieceNodes[event.position.column][event.position.row] = nil
                         
                         let fadeAction = SKAction.fadeOut(withDuration: AnimationDuration.fade)
                         caputuredPieceNode.run(fadeAction, completion: {
@@ -126,13 +126,13 @@ class BoardNode: SKNode {
             let moveAction = SKAction.move(to: to, duration: AnimationDuration.move)
             pieceNode.run(SKAction.sequence([waitAction, moveAction]))
             
-            for (position, piece) in turn.capturedPieces {
-                let capturedPieceNode = BoardPieceNode(cellSize: cellSize, boardPiece: piece)
-                capturedPieceNode.position = CGPoint(x: CGFloat(position.column) * cellSize, y: CGFloat(position.row) * cellSize)
+            for event in turn.capturedPieces {
+                let capturedPieceNode = BoardPieceNode(cellSize: cellSize, boardPiece: event.piece)
+                capturedPieceNode.position = CGPoint(x: CGFloat(event.position.column) * cellSize, y: CGFloat(event.position.row) * cellSize)
                 capturedPieceNode.zPosition = Layer.piece
                 capturedPieceNode.alpha = 0.0
                 addChild(capturedPieceNode)
-                pieceNodes[position.column][position.row] = capturedPieceNode
+                pieceNodes[event.position.column][event.position.row] = capturedPieceNode
                 
                 let fadeAction = SKAction.fadeIn(withDuration: AnimationDuration.fade)
                 capturedPieceNode.run(fadeAction)

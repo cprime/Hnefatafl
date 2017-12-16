@@ -12,7 +12,7 @@ enum GameError: Error {
     case unknown
 }
 
-class Game {
+class Game: Codable {
     var board: Board
     var turns = [Turn]()
     var undoneTurns = [Turn]()
@@ -74,7 +74,7 @@ class Game {
         }
 
         // Check for Capture
-        var capturedPieces = [(BoardPosition, BoardPiece)?]()
+        var capturedPieces = [CaptureEvent?]()
         capturedPieces += [checkMovement(toPosition: toPosition, horizonal: 1, vertical: 0)]
         capturedPieces += [checkMovement(toPosition: toPosition, horizonal: -1, vertical: 0)]
         capturedPieces += [checkMovement(toPosition: toPosition, horizonal: 0, vertical: 1)]
@@ -104,7 +104,7 @@ class Game {
         return turn
     }
 
-    private func checkMovement(toPosition: BoardPosition, horizonal: Int, vertical: Int) -> (BoardPosition, BoardPiece)? {
+    private func checkMovement(toPosition: BoardPosition, horizonal: Int, vertical: Int) -> CaptureEvent? {
         let pinnedPosition = toPosition.move(column: horizonal, row: vertical)
         
         guard let movingPiece = board.piece(at: toPosition),
@@ -117,13 +117,13 @@ class Game {
             if let otherSideSquare = board.square(at: toPosition.move(column: horizonal * 2, row: vertical * 2)) {
                 if let otherPiece = otherSideSquare.piece, otherPiece.side != pinnedPiece.side {
                     if let removedPiece = try? board.removePiece(at: pinnedPosition) {
-                        return (pinnedPosition, removedPiece)
+                        return CaptureEvent(position: pinnedPosition, piece: removedPiece)
                     } else {
                         return nil
                     }
                 } else if otherSideSquare.type == .kingEscape {
                     if let removedPiece = try? board.removePiece(at: pinnedPosition) {
-                        return (pinnedPosition, removedPiece)
+                        return CaptureEvent(position: pinnedPosition, piece: removedPiece)
                     } else {
                         return nil
                     }
@@ -164,8 +164,8 @@ class Game {
         turns.append(nextMove)
         
         try board.movePiece(from: nextMove.from, to: nextMove.to)
-        try nextMove.capturedPieces.forEach { position, _ in
-            _ = try board.removePiece(at: position)
+        try nextMove.capturedPieces.forEach { event in
+            _ = try board.removePiece(at: event.position)
         }
         if nextMove.completesGame {
             victor = nextMove.piece.side
@@ -187,8 +187,8 @@ class Game {
         undoneTurns.append(lastMove)
         
         try board.movePiece(from: lastMove.to, to: lastMove.from)
-        try lastMove.capturedPieces.forEach { position, piece in
-            try board.add(piece, at: position)
+        try lastMove.capturedPieces.forEach { event in
+            try board.add(event.piece, at: event.position)
         }
         if lastMove.completesGame {
             victor = nil

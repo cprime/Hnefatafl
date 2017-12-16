@@ -170,6 +170,8 @@ extension GameScene: BoardNodeDelegate {
         
         boardNode.apply(boardSelection)
         if let turn = turn {
+            let data = try! JSONEncoder().encode(game)
+            print(String(data: data, encoding: String.Encoding.utf8)!)
             boardNode.applyForward(turn)
         }
         updateStatusLabel()

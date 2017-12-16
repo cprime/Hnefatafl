@@ -8,22 +8,17 @@
 
 import Foundation
 
-enum BoardPieceSide {
+enum BoardPieceSide: Int, Codable {
     case attacker
     case defender
 }
 
-enum BoardPieceType {
+enum BoardPieceType: Int, Codable {
     case king
     case soldier
 }
 
-struct BoardPiece {
+struct BoardPiece: Codable {
     let side: BoardPieceSide
     let type: BoardPieceType
-
-    init(side: BoardPieceSide, type: BoardPieceType) {
-        self.side = side
-        self.type = type
-    }
 }

@@ -12,7 +12,7 @@ enum BoardError: Error {
     case unknown
 }
 
-class Board {
+class Board: Codable {
     // spaces[column][row] : collection of columns
     private var spaces: [[BoardSquare]]
 

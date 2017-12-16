@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum BoardSquareType {
+enum BoardSquareType: Int, Codable {
     case kingStart
     case open
     case kingEscape
 }
 
-struct BoardSquare {
+struct BoardSquare: Codable {
     let type: BoardSquareType
     var piece: BoardPiece?
 

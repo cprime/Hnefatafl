@@ -8,10 +8,15 @@
 
 import Foundation
 
-struct Turn {
+struct CaptureEvent: Codable {
+    let position: BoardPosition
+    let piece: BoardPiece
+}
+
+struct Turn: Codable {
     var piece: BoardPiece
     var from: BoardPosition
     var to: BoardPosition
-    var capturedPieces: [(BoardPosition, BoardPiece)]
+    var capturedPieces: [CaptureEvent]
     var completesGame: Bool
 }
