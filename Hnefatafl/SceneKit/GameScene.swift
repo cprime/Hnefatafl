@@ -111,20 +111,23 @@ class GameScene: SKScene {
         guard case .idle = boardSelection.state, game.canUndoTurn(), let turn = (try? game.undoTurn()) else {
             return
         }
-        boardSelection.setIdle()
+        boardNode.apply(boardSelection)
         boardNode.applyBackwards(turn)
         updateStatusLabel()
         updateButtons()
+        GameStore.shared.save(game)
     }
     
     fileprivate func redoTurn() {
         guard case .idle = boardSelection.state, game.canRedoTurn(), let turn = (try? game.redoTurn()) else {
             return
         }
-        boardSelection.setIdle()
+        
+        boardNode.apply(boardSelection)
         boardNode.applyForward(turn)
         updateStatusLabel()
         updateButtons()
+        GameStore.shared.save(game)
     }
 }
 
@@ -170,12 +173,11 @@ extension GameScene: BoardNodeDelegate {
         
         boardNode.apply(boardSelection)
         if let turn = turn {
-            let data = try! JSONEncoder().encode(game)
-            print(String(data: data, encoding: String.Encoding.utf8)!)
             boardNode.applyForward(turn)
         }
         updateStatusLabel()
         updateButtons()
+        GameStore.shared.save(game)
     }
 }
 

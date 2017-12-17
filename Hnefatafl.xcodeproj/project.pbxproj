@@ -12,6 +12,7 @@
 		A936E5131FCB45FB0000622F /* BoardSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = A936E5121FCB45FB0000622F /* BoardSquare.swift */; };
 		E6189D371FE4B45D00D92D15 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6189D361FE4B45D00D92D15 /* MainMenuViewController.swift */; };
 		E6189D3B1FE4B96100D92D15 /* LoadGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6189D3A1FE4B96100D92D15 /* LoadGameViewController.swift */; };
+		E6189D3D1FE606BB00D92D15 /* GameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6189D3C1FE606BB00D92D15 /* GameStore.swift */; };
 		E618C3791FDE1FB500D519F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E618C3771FDE1FB500D519F3 /* Main.storyboard */; };
 		E63C52B71C33307300F66567 /* BoardPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C52B61C33307300F66567 /* BoardPiece.swift */; };
 		E63C52BB1C33318D00F66567 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C52BA1C33318D00F66567 /* Board.swift */; };
@@ -53,6 +54,7 @@
 		CD50A0B9A532C5A42AE97EE9 /* Pods-Hnefatafl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hnefatafl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hnefatafl/Pods-Hnefatafl.debug.xcconfig"; sourceTree = "<group>"; };
 		E6189D361FE4B45D00D92D15 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		E6189D3A1FE4B96100D92D15 /* LoadGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadGameViewController.swift; sourceTree = "<group>"; };
+		E6189D3C1FE606BB00D92D15 /* GameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStore.swift; sourceTree = "<group>"; };
 		E618C3781FDE1FB500D519F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E63C52B61C33307300F66567 /* BoardPiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BoardPiece.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E63C52BA1C33318D00F66567 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Board.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -138,6 +140,7 @@
 				E63C52BC1C3331B500F66567 /* BoardFactory.swift */,
 				E63C52C31C345ACD00F66567 /* Game.swift */,
 				E63C52C71C345B5B00F66567 /* Turn.swift */,
+				E6189D3C1FE606BB00D92D15 /* GameStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				E6189D3B1FE4B96100D92D15 /* LoadGameViewController.swift in Sources */,
 				E63C52C41C345ACD00F66567 /* Game.swift in Sources */,
 				E6C15EC11FDCD9FC00B2ACEC /* BoardSelection.swift in Sources */,
+				E6189D3D1FE606BB00D92D15 /* GameStore.swift in Sources */,
 				E6735AF71FDF7C4D003CD94F /* SimpleButtonNode.swift in Sources */,
 				E63C52BB1C33318D00F66567 /* Board.swift in Sources */,
 				A936E5131FCB45FB0000622F /* BoardSquare.swift in Sources */,

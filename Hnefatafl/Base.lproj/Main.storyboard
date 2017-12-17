@@ -84,9 +84,6 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="ofB-TJ-6lB" secondAttribute="trailing" id="o6k-Xe-T4E"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Nwx-te-eZN" kind="show" identifier="loadGameSegue" trigger="accessoryAction" action="showDetailViewController:sender:" id="9y8-ZY-fVA"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -97,6 +94,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="uGh-Fr-sG4"/>
+                    <connections>
+                        <segue destination="Nwx-te-eZN" kind="show" identifier="loadGameSegue" id="jQl-Gq-RgW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAm-3n-E9z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,7 +111,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoadGameTableViewCell" id="gTq-Th-qb0">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="gTq-Th-qb0">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gTq-Th-qb0" id="CFs-74-69C">
@@ -125,6 +125,9 @@
                             <outlet property="delegate" destination="Nwx-te-eZN" id="MbC-vu-pFr"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="VGf-2h-fMK" kind="show" identifier="newGameSegue" id="LIC-vr-uKp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HH8-UA-PQk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,4 +164,7 @@
             <point key="canvasLocation" x="2425" y="392"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="LIC-vr-uKp"/>
+    </inferredMetricsTieBreakers>
 </document>

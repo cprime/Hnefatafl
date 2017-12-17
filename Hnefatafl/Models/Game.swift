@@ -13,6 +13,7 @@ enum GameError: Error {
 }
 
 class Game: Codable {
+    let identifier = UUID().uuidString
     var board: Board
     var turns = [Turn]()
     var undoneTurns = [Turn]()
