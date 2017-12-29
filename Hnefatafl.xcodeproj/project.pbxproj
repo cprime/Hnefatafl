@@ -13,6 +13,8 @@
 		E6189D371FE4B45D00D92D15 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6189D361FE4B45D00D92D15 /* MainMenuViewController.swift */; };
 		E6189D3B1FE4B96100D92D15 /* LoadGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6189D3A1FE4B96100D92D15 /* LoadGameViewController.swift */; };
 		E6189D3D1FE606BB00D92D15 /* GameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6189D3C1FE606BB00D92D15 /* GameStore.swift */; };
+		E6189D401FEE02DD00D92D15 /* LoadGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6189D3F1FEE02DD00D92D15 /* LoadGameTableViewCell.swift */; };
+		E6189D421FEE05B900D92D15 /* LoadGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6189D411FEE05B900D92D15 /* LoadGameViewModel.swift */; };
 		E618C3791FDE1FB500D519F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E618C3771FDE1FB500D519F3 /* Main.storyboard */; };
 		E63C52B71C33307300F66567 /* BoardPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C52B61C33307300F66567 /* BoardPiece.swift */; };
 		E63C52BB1C33318D00F66567 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C52BA1C33318D00F66567 /* Board.swift */; };
@@ -55,6 +57,8 @@
 		E6189D361FE4B45D00D92D15 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		E6189D3A1FE4B96100D92D15 /* LoadGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadGameViewController.swift; sourceTree = "<group>"; };
 		E6189D3C1FE606BB00D92D15 /* GameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStore.swift; sourceTree = "<group>"; };
+		E6189D3F1FEE02DD00D92D15 /* LoadGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadGameTableViewCell.swift; sourceTree = "<group>"; };
+		E6189D411FEE05B900D92D15 /* LoadGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadGameViewModel.swift; sourceTree = "<group>"; };
 		E618C3781FDE1FB500D519F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E63C52B61C33307300F66567 /* BoardPiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BoardPiece.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E63C52BA1C33318D00F66567 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Board.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -130,6 +134,14 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		E6189D3E1FEE02B600D92D15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E6189D3F1FEE02DD00D92D15 /* LoadGameTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E63C52AF1C33281A00F66567 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				E6C15EC01FDCD9FC00B2ACEC /* BoardSelection.swift */,
+				E6189D411FEE05B900D92D15 /* LoadGameViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -196,6 +209,7 @@
 		E6C8CF881C2F67CC009D4269 /* Hnefatafl */ = {
 			isa = PBXGroup;
 			children = (
+				E6189D3E1FEE02B600D92D15 /* Views */,
 				E6C8CF891C2F67CC009D4269 /* AppDelegate.swift */,
 				E6189D351FE4B43800D92D15 /* ViewControllers */,
 				E68AF7061FD484DA00F1A763 /* SceneKit */,
@@ -437,9 +451,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6189D421FEE05B900D92D15 /* LoadGameViewModel.swift in Sources */,
 				E68AF70B1FD4E8BE00F1A763 /* GameViewController.swift in Sources */,
 				E68AF70E1FD4F41900F1A763 /* BoardSquareNode.swift in Sources */,
 				E68AF7101FD78A8500F1A763 /* BoardPieceNode.swift in Sources */,
+				E6189D401FEE02DD00D92D15 /* LoadGameTableViewCell.swift in Sources */,
 				E63C52C81C345B5B00F66567 /* Turn.swift in Sources */,
 				E63C52BD1C3331B500F66567 /* BoardFactory.swift in Sources */,
 				E68791761C38680600C60D00 /* BoardPosition.swift in Sources */,
