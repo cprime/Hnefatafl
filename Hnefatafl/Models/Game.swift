@@ -77,10 +77,10 @@ class Game: Codable {
 
         // Check for Capture
         var capturedPieces = [CaptureEvent?]()
-        capturedPieces += [checkMovement(toPosition: toPosition, horizonal: 1, vertical: 0)]
-        capturedPieces += [checkMovement(toPosition: toPosition, horizonal: -1, vertical: 0)]
-        capturedPieces += [checkMovement(toPosition: toPosition, horizonal: 0, vertical: 1)]
-        capturedPieces += [checkMovement(toPosition: toPosition, horizonal: 0, vertical: -1)]
+        capturedPieces += [checkMovement(toPosition: toPosition, direction: .up)]
+        capturedPieces += [checkMovement(toPosition: toPosition, direction: .down)]
+        capturedPieces += [checkMovement(toPosition: toPosition, direction: .left)]
+        capturedPieces += [checkMovement(toPosition: toPosition, direction: .right)]
 
         // Check for King Escape
         for column in 0..<board.columns {
@@ -106,8 +106,8 @@ class Game: Codable {
         return turn
     }
 
-    private func checkMovement(toPosition: BoardPosition, horizonal: Int, vertical: Int) -> CaptureEvent? {
-        let pinnedPosition = toPosition.move(column: horizonal, row: vertical)
+    private func checkMovement(toPosition: BoardPosition, direction: BoardDirection) -> CaptureEvent? {
+        let pinnedPosition = toPosition.move(in: direction)
         
         guard let movingPiece = board.piece(at: toPosition),
             let pinnedPiece = board.piece(at: pinnedPosition),
@@ -116,14 +116,14 @@ class Game: Codable {
         }
         
         if pinnedPiece.type == .soldier {
-            if let otherSideSquare = board.square(at: toPosition.move(column: horizonal * 2, row: vertical * 2)) {
+            if let otherSideSquare = board.square(at: toPosition.move(in: direction, distance: 2)) {
                 if let otherPiece = otherSideSquare.piece, otherPiece.side != pinnedPiece.side {
                     if let removedPiece = try? board.removePiece(at: pinnedPosition) {
                         return CaptureEvent(position: pinnedPosition, piece: removedPiece)
                     } else {
                         return nil
                     }
-                } else if otherSideSquare.type == .kingEscape {
+                } else if otherSideSquare.type == .kingEscape || otherSideSquare.type == .kingStart {
                     if let removedPiece = try? board.removePiece(at: pinnedPosition) {
                         return CaptureEvent(position: pinnedPosition, piece: removedPiece)
                     } else {
@@ -136,13 +136,13 @@ class Game: Codable {
                 return nil
             }
         } else if pinnedPiece.type == .king {
-            if let upSide = board.piece(at: pinnedPosition.move(column: 0, row: -1))?.side,
+            if let upSide = board.piece(at: pinnedPosition.move(in: .up))?.side,
                 upSide != pinnedPiece.side,
-                let downSide = board.piece(at: pinnedPosition.move(column: 0, row: 1))?.side,
+                let downSide = board.piece(at: pinnedPosition.move(in: .down))?.side,
                 downSide != pinnedPiece.side,
-                let leftSide = board.piece(at: pinnedPosition.move(column: -1, row: 0))?.side,
+                let leftSide = board.piece(at: pinnedPosition.move(in: .left))?.side,
                 leftSide != pinnedPiece.side,
-                let rightSide = board.piece(at: pinnedPosition.move(column: 1, row: 0))?.side,
+                let rightSide = board.piece(at: pinnedPosition.move(in: .right))?.side,
                 rightSide != pinnedPiece.side {
                 victor = .attacker
                 return nil

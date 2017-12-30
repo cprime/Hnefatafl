@@ -15,6 +15,7 @@
 		E6189D3D1FE606BB00D92D15 /* GameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6189D3C1FE606BB00D92D15 /* GameStore.swift */; };
 		E6189D401FEE02DD00D92D15 /* LoadGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6189D3F1FEE02DD00D92D15 /* LoadGameTableViewCell.swift */; };
 		E6189D421FEE05B900D92D15 /* LoadGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6189D411FEE05B900D92D15 /* LoadGameViewModel.swift */; };
+		E6189D441FF66EF500D92D15 /* CaptureRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6189D431FF66EF500D92D15 /* CaptureRule.swift */; };
 		E618C3791FDE1FB500D519F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E618C3771FDE1FB500D519F3 /* Main.storyboard */; };
 		E63C52B71C33307300F66567 /* BoardPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C52B61C33307300F66567 /* BoardPiece.swift */; };
 		E63C52BB1C33318D00F66567 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C52BA1C33318D00F66567 /* Board.swift */; };
@@ -59,6 +60,7 @@
 		E6189D3C1FE606BB00D92D15 /* GameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStore.swift; sourceTree = "<group>"; };
 		E6189D3F1FEE02DD00D92D15 /* LoadGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadGameTableViewCell.swift; sourceTree = "<group>"; };
 		E6189D411FEE05B900D92D15 /* LoadGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadGameViewModel.swift; sourceTree = "<group>"; };
+		E6189D431FF66EF500D92D15 /* CaptureRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureRule.swift; sourceTree = "<group>"; };
 		E618C3781FDE1FB500D519F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E63C52B61C33307300F66567 /* BoardPiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BoardPiece.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E63C52BA1C33318D00F66567 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Board.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -153,6 +155,7 @@
 				E63C52C31C345ACD00F66567 /* Game.swift */,
 				E63C52C71C345B5B00F66567 /* Turn.swift */,
 				E6189D3C1FE606BB00D92D15 /* GameStore.swift */,
+				E6189D431FF66EF500D92D15 /* CaptureRule.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				E6C8CF8A1C2F67CC009D4269 /* AppDelegate.swift in Sources */,
 				E68AF7081FD4858400F1A763 /* BoardNode.swift in Sources */,
 				E673DD2D1FD797020071C0C9 /* GameScene.swift in Sources */,
+				E6189D441FF66EF500D92D15 /* CaptureRule.swift in Sources */,
 				E64136D81FD2405B00C9E33E /* Array+Helpers.swift in Sources */,
 				E6189D371FE4B45D00D92D15 /* MainMenuViewController.swift in Sources */,
 				E6189D3B1FE4B96100D92D15 /* LoadGameViewController.swift in Sources */,
